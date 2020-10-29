@@ -3,6 +3,7 @@
 use App\Libro;
 use Carbon\Carbon; // sistema de fechas de laravel
 use App\Categoria;
+use App\User;
 use App\Etiqueta;
 use Illuminate\Database\Seeder;
 
@@ -15,14 +16,22 @@ class LibrosTableSeeder extends Seeder
      */
     public function run()
     {
+        factory(User::class, 5)->create();// Me genero 5 nuevos usuarios predeterminados
+         
+/*
         Categoria::truncate(); // Evitara que se dupliquen datos
     
+        
         $categoria = new Categoria();
         $categoria->nombre = "Categoría 1";
         $categoria->save();
 
+
         Etiqueta::truncate(); // Evita duplicar datos
-    
+    */
+
+          factory(Categoria::class, 10)->create();
+
         $etiqueta = new Etiqueta();
         $etiqueta->nombre = "Etiqueta 1";
         $etiqueta->save();
