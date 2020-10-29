@@ -10,9 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
+});
+*/
+
+use App\Libro;
+
+Route::get('/', function () {
+    $libros = Libro::all();
+    return view('welcome', compact('libros'));
 });
 
 Auth::routes();
